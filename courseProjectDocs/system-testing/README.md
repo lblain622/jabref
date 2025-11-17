@@ -23,3 +23,4 @@ BUILD SUCCESSFUL
 ```
 To view detailed results:
 `jablib/build/reports/tests/index.html`
+
