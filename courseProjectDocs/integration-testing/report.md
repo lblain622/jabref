@@ -105,9 +105,28 @@ The goal of this test is to verify that the database is correctly updated when a
 #### Bug Report:
  1. When two entries have the same name,author, but a different year, the duplicate check module detects them as duplicates.
 
+---
+
+## Author and Forms Integration Test
+
+#### Summary:
+Integration test for Author and Formatter modules. 
+Tests the interaction between author and StudyCatalog logic.
+
+#### Modules Integrated
+- `org.jabref.logic.cleanup.Formatter` — manages Entry Forms logic
+- `org.jabref.model.entry.Author` — manages author of entry form 
+- `org.jabref.model.study.StudyCatalog`
+#### Test Data Prep:
+One author entry created and formatter applied function to remove special characters then study catalog created.
+#### Execution :
+```bash
+.\gradlew :jablib:test --tests "org.jabref.integration.FormAuthStudyIntegrationTest"
+```
+
 ## Group contributions
-| Member   | Task/Contribution                                     | Notes                                                         |
-|----------|-------------------------------------------------------|---------------------------------------------------------------|
-| Geoffrey | Designed and implemented `PdfImporterIntegrationTest` | Verified data flow between importer and parser result modules |
-| Vanessa  | Designed and implemented  `DuplicateCheckIntegrationTest`                             | N/A                                                           |
-| Lucille  | X                                                     | X                                                             |
+| Member   | Task/Contribution                                         | Notes                                                         |
+|----------|-----------------------------------------------------------|---------------------------------------------------------------|
+| Geoffrey | Designed and implemented `PdfImporterIntegrationTest`     | Verified data flow between importer and parser result modules |
+| Lucille  | Designed and implemented  `DuplicateCheckIntegrationTest` | N/A                                                           |
+| Vanessa  | Designed and implemented `FormAuthStudyIntegrationTest`   | Applying form and author interactions                         |
