@@ -82,10 +82,8 @@ val mockitoAgent = configurations.create("mockitoAgent")
 
 dependencies {
     // api(platform(project(":versions")))
-
     implementation("org.openjfx:javafx-base")
     implementation("com.ibm.icu:icu4j")
-
     // Fix "error: module not found: javafx.controls" during compilation
     // implementation("org.openjfx:javafx-controls:$javafxVersion")
 
@@ -665,3 +663,5 @@ pitest {
     useClasspathFile.set(true)
     junit5PluginVersion.set("1.2.1")
 }
+
+

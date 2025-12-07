@@ -1,0 +1,10 @@
+Run 1: Duration=5.4182487s CPU=61.990474350366% AvailableMem=2285MB
+Run 2: Duration=5.0301904s CPU=74.3528104246294% AvailableMem=1921MB
+Run 3: Duration=5.0739818s CPU=95.5376284591105% AvailableMem=1700MB
+Run 4: Duration=5.0630017s CPU=100% AvailableMem=1544MB
+Run 5: Duration=5.0528118s CPU=100% AvailableMem=1255MB
+Run 6: Duration=5.0675709s CPU=100% AvailableMem=1046MB
+Run 7: Duration=5.1321829s CPU=100% AvailableMem=738MB
+Run 8: Duration=5.0845048s CPU=100% AvailableMem=576MB
+Run 9: Duration=5.1145317s CPU=100% AvailableMem=534MB
+Run 10: Duration=5.050668s CPU=100% AvailableMem=464MB
