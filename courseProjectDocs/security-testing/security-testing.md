@@ -48,8 +48,8 @@ The scan did **not** test:
 ./gradlew snyk-test
 ```
 
-Most tools has issues working with Gradle submodules in the project,bu through some trial and error synk seems to work.
-
+Most tools have issues working with Gradle submodules in the project, but through some trial and error synk seems to work.
+The arguments to have it scan further subprojects seem not to work,so mainly initial folders were scanned to find vulnerabilities
 ### Group Contributions
 
 | Member | Task                               | Notes                                                         |
