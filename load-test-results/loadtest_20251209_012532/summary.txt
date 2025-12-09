@@ -1,0 +1,20 @@
+JabRef Load Test Summary
+========================
+Test: loadtest_20251209_012532
+Date: Tue Dec 09 01:25:44 EST 2025
+
+Configuration:
+  Threads: 30
+  Operations per thread: 1000
+  Target operations: 30000
+  Actual operations: 30000
+
+Results:
+  Duration: 1765261543972 ms
+  Throughput: 0.00 ops/sec
+  Average response time: 1.22 ms
+
+
+Metrics File: metrics.csv
+  Columns: timestamp_ms, operations_per_second, cpu_percent,
+           available_memory_mb, response_time_ms, total_operations

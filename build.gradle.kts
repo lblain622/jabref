@@ -1,4 +1,5 @@
 plugins {
+
     id("org.jabref.gradle.base.repositories")
     id("org.jabref.gradle.feature.compile") // for openrewrite
     id("org.openrewrite.rewrite") version "7.19.0"
@@ -62,23 +63,11 @@ tasks.register("run") {
     dependsOn(":jabgui:run")
 }
 
-allprojects {
-    tasks.cyclonedxDirectBom {
-    }
-
+tasks.register("runLoadTest") {
+    group = "verification"
+    description = "Run JabRef load test (delegates to :jablib:loadTest)"
+    dependsOn(":jablib:loadTest")
 }
-
-tasks.cyclonedxBom {
-    // Aggregated SBOM configuration
-    projectType = org.cyclonedx.model.Component.Type.APPLICATION
-    includeBuildSystem = true
-    componentVersion = project.version.toString()
-    componentGroup = "org.jabref"
-}
-
-
-
-
 
 
 

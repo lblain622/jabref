@@ -7,6 +7,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import java.net.URI
 import java.util.*
 
+
 plugins {
     id("org.jabref.gradle.module")
     id("java-library")
@@ -662,6 +663,38 @@ pitest {
     failWhenNoMutations.set(false)
     useClasspathFile.set(true)
     junit5PluginVersion.set("1.2.1")
+}
+
+
+
+// Run the integrated load test from this module
+tasks.register<JavaExec>("loadTest") {
+    group = "verification"
+    description = "Run JabRef integrated load test"
+
+    // Use the TEST classpath (class resides in src/test/java)
+    classpath = sourceSets.test.get().runtimeClasspath
+    mainClass.set("org.jabref.loadtest.LoadTest")
+
+    // Allow overriding via -Pthreads= -Pops= -Pname=
+    val threads = (project.findProperty("threads") as String?) ?: "20"
+    val ops = (project.findProperty("ops") as String?) ?: "100"
+    val name =
+        (project.findProperty(
+            "name"
+        ) as String?)
+            ?: ("gradle_" + System.currentTimeMillis()
+                .toString())
+
+    args(threads, ops, name)
+
+    // Ensure results are written into the repo root folder
+    workingDir = rootDir
+
+    jvmArgs(
+        "-Xmx2g",
+        "-XX:+HeapDumpOnOutOfMemoryError"
+    )
 }
 
 
