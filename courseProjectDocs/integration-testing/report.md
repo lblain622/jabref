@@ -30,26 +30,6 @@ Executed using:
 #### Bug reports
 No new defects were identified during integration testing.
 
----
-### Integration Test:
-Overview of integration test
-
-#### Modules Integrated
-which modules were integrated and what interactions were tested.
-
-#### Test Scenario
-describe how input/output data was generated or collected.
-
-#### Test Data Preparation
-describe how input/output data was generated or collected.
-
-#### Execution
-summarize test outcomes, including any discovered defects.
-Executed using:
-```bash
-.\gradlew :jablib:test --tests "org.jabref.integration.PdfImporterIntegrationTest"
-```
-
 
 ## Database Duplication Integration Test
 
@@ -59,7 +39,7 @@ The goal of this test is to verify that the database is correctly updated when a
 
 #### Modules Integrated
 - `org.jabref.model.database` — bibliography database logic
-- `org.jabref.logic.databas` — manages duplication detection logic for entries in the database.
+- `org.jabref.logic.database` — manages duplication detection logic for entries in the database.
 #### Test Data Prep:
  Two BibEntries Objects were created with identical or near identical fields and then inserted into the database
 #### Execution :

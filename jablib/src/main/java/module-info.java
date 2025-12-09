@@ -263,4 +263,6 @@ open module org.jabref.jablib {
     requires transitive org.jspecify;
     requires com.fasterxml.jackson.datatype.jdk8;
     // endregion
+
+    requires java.management;
 }
