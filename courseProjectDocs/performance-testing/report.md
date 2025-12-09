@@ -62,18 +62,35 @@ The bottleneck appears environmental: repeated launches overwhelm the system bef
 ## Load Test
 
 ###  Scope and Design
- The load testing mainly focuses on the
+ The load testing mainly focuses on evaluating the performance of backend uner a sustained workload. We uses multiple threads to perform serveal operations such as inserting a ey entry, search the entries, and modify entries.
+ **Tool Used:** Custom Java-based load testing utility integrated into the project.
+ **Tested component:** JabRef backend database layer (entry insertion, search, and modification logic)
 ### Configuration
 
+**Threads:** 30 worker threads 
+
+**Operations per thread: 1000 operations per thread 
+
+**Timeout threshold:** 5000 ms (operations exceeding this time were classified as timeouts)
+
+**Load pattern:** Continuous mixed read/write operations with short randomized delays
+
 ### Results
+See `load-test-results` folder for detailed results.
 
 ### Performance Findings
-- **Finding 1 — Low CPU Usage:**
-
-- 
+- **Finding 1 — Stable Throughput Under Moderate Concurrency:**
+  With 30 concurrent threads and 30,000 total operations, the system completed the full workload without failures or crashes. This indicates the backend can reliably sustainat high levels
+- **Finding 2 —Low Average Response Time:**
+  The average response time of 1.22 ms shows that individual operations were processed very quickly, suggesting minimal internal processing latency under this load.
+-  **Finding 3 —No Timeouts or Failures Observed:**
+   The system handled the full test run without thread timeouts or failed operations, showing good stability at the tested level.
+- **Finding 4 — Mostly Low CPU Usage with Later Spike:**
+  CPU usage remained very low throughout most test, and available memory decreased gradually but remained stable. The highest CPU usages got were 96% towards the end of the operation set, suggesting that the system was not overloaded.
 
 ## Group Contributions
-| Member    | Contribution |
-|-----------| ------------ |
-| Geoffrey  | Implemented and executed Windows stress test script, collected metrics, summarized findings. |
+| Member   | Contribution                                                                                 |
+|----------|----------------------------------------------------------------------------------------------|
+| Geoffrey | Implemented and executed Windows stress test script, collected metrics, summarized findings. |
+| Lucille  | Implemented Load testing using Java,collected and stored metrics                             |
 

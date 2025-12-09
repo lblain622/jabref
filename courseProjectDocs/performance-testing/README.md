@@ -42,3 +42,21 @@ For each test run:
 
 ---
 
+## Stress Test 
+
+### How to Execute the Script
+From JabRef's root directory:
+```bash
+  ./gradlew runloadTest
+```
+
+### Results
+  View Results in `load-test-results directory`
+    Records:
+    - Duration
+    - CPU usage (%)
+    - Available memory (MB)
+    - Average response time (ms)
+    - Total operations performed
+
+
