@@ -33,11 +33,11 @@ The scan did **not** test:
 
 | Title                                                                                  | Type                      | Severity | Recommended Fix                                                              | Reported By |
 |----------------------------------------------------------------------------------------|---------------------------|----------|------------------------------------------------------------------------------|-------------|
-| Information Exposure in Kotlin Standard Library (SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744) | Dependency Vulnerability  | Low      | Upgrade `org.jetbrains.kotlin:kotlin-stdlib` to version **2.1.0** or later   | Member 1    |
-| Deprecated Gradle Features Detected                                                    | Misconfiguration          | Low      | Update Gradle build scripts and plugins to remove deprecated features        | Member 2    |
-| Multiple Vulnerable Dependency Paths Detected                                          | Configuration Weakness    | Low      | Refactor dependency tree to reduce transitive risk exposure                  | Member 3    |
+| Information Exposure in Kotlin Standard Library (SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744) | Dependency Vulnerability  | Low      | Upgrade `org.jetbrains.kotlin:kotlin-stdlib` to version **2.1.0** or later   | Geoffrey    |
+| Deprecated Gradle Features Detected                                                    | Misconfiguration          | Low      | Update Gradle build scripts and plugins to remove deprecated features        | Lucille     |
+| Multiple Vulnerable Dependency Paths Detected                                          | Configuration Weakness    | Low      | Refactor dependency tree to reduce transitive risk exposure                  | Lucille     |
 | Uncontrolled Recursion                                                                 | Dependency Vulnerability  | High     | Upgrade org.apache.commons:commons-lang3 to version 3.18.0 or higher.        | Vanessa     |
-| Allocation of Resources Without Limits or Throttling | Malicious Craft Injection | High     | Timeout requests for file uploads and Upgrade to org.wiremock:wiremock@3.13. | Vanessa |
+| Allocation of Resources Without Limits or Throttling | Malicious Craft Injection | High     | Timeout requests for file uploads and Upgrade to org.wiremock:wiremock@3.13. | Vanessa     |
 ---
 
 ### Execution and Results
@@ -53,8 +53,8 @@ Most tools have issues working with Gradle submodules in the project, but throug
 The arguments to have it scan further subprojects seem not to work,so mainly initial folders were scanned to find vulnerabilities
 ### Group Contributions
 
-| Member | Task                                         | Notes                                                                       |
-| -------- |----------------------------------------------|-----------------------------------------------------------------------------|
-| Lucille | set up and scann project with snyk           |                                                                             |
-| Geoffrey | tba                                          | tba                                                                         |
-| Vanessa | Added recommend fixes for two vulnerabilites | Dependency Vulnerability and Malicious Craft Injection (both jablib module) |
+| Member | Task                                          | Notes                                                                       |
+| -------- |-----------------------------------------------|-----------------------------------------------------------------------------|
+| Lucille | set up and scann project with snyk            |                                                                             |
+| Geoffrey | Identified Information Exposure Vulnerability | A Kotlin application using createTempDir or createTempFile and placing sensitive information within either of these locations would be leaking this information in a read-only way to other users also on this system.                                                                         |
+| Vanessa | Added recommend fixes for two vulnerabilites  | Dependency Vulnerability and Malicious Craft Injection (both jablib module) |
