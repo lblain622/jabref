@@ -9,6 +9,7 @@ From the repository root, run the following command:
 ```bash
 ./gradlew :jablib:test --tests "org.jabref.integration.PdfImporterIntegrationTest"
 ./gradlew :jablib:test --tests "org.jabref.integration.DuplicateCheckIntegrationTest"
+./gradlew :jablib:test --tests "org.jabref.integration.FormAuthStudyIntegrationTest"
 ```
 
 ### Viewing the Results
@@ -28,6 +29,26 @@ The goal of this test is to verify that the database is correctly updated when a
 From the repository root, run the following command:
 ```bash
 ./gradlew :jablib:test --tests "org.jabref.integration.DuplicateCheckIntegrationTest"
+```
+
+---
+
+## Author and Forms Integration Test
+
+#### Summary:
+Integration test for Author and Formatter modules.
+Tests the interaction between author and StudyCatalog logic.
+
+#### Modules Integrated
+- `org.jabref.logic.cleanup.Formatter` — manages Entry Forms logic
+- `org.jabref.model.entry.Author` — manages author of entry form
+- `org.jabref.model.study.StudyCatalog` - model view for GUI StudyCatalog
+#### Test Data Prep:
+One author entry created and formatter applied function to remove special characters then study catalog created based off that Author made to verfy it went into a Library object.
+
+#### Execution :
+```bash
+.\gradlew :jablib:test --tests "org.jabref.integration.FormAuthStudyIntegrationTest"
 ```
 
 ### Viewing the Results
