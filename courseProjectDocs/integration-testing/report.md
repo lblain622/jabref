@@ -92,7 +92,7 @@ The goal of this test is to verify that the database is correctly updated when a
 
 #### Modules Integrated
 - `org.jabref.model.database` — bibliography database logic
-- `org.jabref.logic.databas` — manages duplication detection logic for entries in the database.
+- `org.jabref.logic.database` — manages duplication detection logic for entries in the database.
 #### Test Data Prep:
  Two BibEntries Objects were created with identical or near identical fields and then inserted into the database
 #### Execution :
@@ -109,5 +109,5 @@ The goal of this test is to verify that the database is correctly updated when a
 | Member   | Task/Contribution                                     | Notes                                                         |
 |----------|-------------------------------------------------------|---------------------------------------------------------------|
 | Geoffrey | Designed and implemented `PdfImporterIntegrationTest` | Verified data flow between importer and parser result modules |
-| Vanessa  | Designed and implemented  `DuplicateCheckIntegrationTest`                             | N/A                                                           |
-| Lucille  | X                                                     | X                                                             |
+| Lucille  | Designed and implemented  `DuplicateCheckIntegrationTest`                             | N/A                                                           |
+| Vanessa  | X                                                     | X                                                             |
