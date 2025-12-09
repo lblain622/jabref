@@ -50,39 +50,6 @@ Executed using:
 .\gradlew :jablib:test --tests "org.jabref.integration.PdfImporterIntegrationTest"
 ```
 
-#### Results:
-- No defects were discovered.
-
-#### Bug reports (if any): link or describe issues identified through integration testing.
-link or describe issues identified through integration testing.
-
----
-### Integration Test:
-Overview of integration test
-
-#### Modules Integrated
-which modules were integrated and what interactions were tested.
-
-#### Test Scenario
-describe how input/output data was generated or collected.
-
-#### Test Data Preparation
-describe how input/output data was generated or collected.
-
-#### Execution
-summarize test outcomes, including any discovered defects.
-Executed using:
-```bash
-.\gradlew :jablib:test --tests "org.jabref.integration.PdfImporterIntegrationTest"
-```
-
-#### Results:
-- No defects were discovered.
-
-#### Bug reports (if any): link or describe issues identified through integration testing.
-link or describe issues identified through integration testing.
-
----
 
 ## Database Duplication Integration Test
 
@@ -109,5 +76,5 @@ The goal of this test is to verify that the database is correctly updated when a
 | Member   | Task/Contribution                                     | Notes                                                         |
 |----------|-------------------------------------------------------|---------------------------------------------------------------|
 | Geoffrey | Designed and implemented `PdfImporterIntegrationTest` | Verified data flow between importer and parser result modules |
-| Vanessa  | Designed and implemented  `DuplicateCheckIntegrationTest`                             | N/A                                                           |
-| Lucille  | X                                                     | X                                                             |
+| Lucille  | Designed and implemented  `DuplicateCheckIntegrationTest`                             | N/A                                                           |
+| Vanessa  | X                                                     | X                                                             |
