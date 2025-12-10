@@ -87,10 +87,57 @@ See `load-test-results` folder for detailed results.
    The system handled the full test run without thread timeouts or failed operations, showing good stability at the tested level.
 - **Finding 4 — Mostly Low CPU Usage with Later Spike:**
   CPU usage remained very low throughout most test, and available memory decreased gradually but remained stable. The highest CPU usages got were 96% towards the end of the operation set, suggesting that the system was not overloaded.
+---
+
+## Spike Test
+
+###  Scope and Design
+Spike testing focuses on evaluating the performance of BibDatabase entires being populated under a normal workload implmeented by multiple threads. However, JMeter imposes scheduler induced spikes to mimic tons of users flooding the application.
+**Tool Used:** JMeter
+**Tested component:** BibDatabaseTest (entry insertion, search, and modification logic).
+
+### Configuration
+
+**Threads:** 1280 worker threads In Total
+- 40 threads baseline (before & after spike, 20 each)
+- 1200 spike threads
+
+**Operations per thread: 5 operations per thread
+
+**Timeout threshold:** 0 ms (JMeter default timeout)
+- Thread lifeline was set to 60seconds
+
+**Spike pattern:** Normal user operations conducted then spike occurs by a ramp-up then normal user traffic returns.
+
+### Results
+The file below contains JMeter TestPlan information.
+File: jablib/src/jmeter/SpikeTest.jmx 
+
+See attached photo below for detailed results.
+![alt](spike_test_trend.PNG)
+
+- Throughput (green line) 2,398.712/minute
+- Black dots are data; these lines show the trend and spike of the traffic
+- Average (dark blue line), median (red) and deviation orange
+
+
+### Performance Findings
+- **Finding 1 — Spike Tolerated Under Moderate Concurrency:**
+  The system completed the full workload within 2 minutes and 28 seconds hinting that the system withstood spikes.
+- **Finding 2 — Low Average Response Time:**
+  The average response time of 72 ms shows that individual operations were processed very quickly, suggesting minimal internal processing latency under this load.
+-  **Finding 3 — No Timeouts or Failures Observed:**
+   The system handled the full test run without thread timeouts or failed operations, showing stability at only 1200 total threads.
+- **Finding 4 — Medium CPU Usage during Spike:**
+  CPU usage remained at medium level as the throughout was quite high, and available memory decreased gradually but remained stable. The highest CPU usages became 100% towards the peak, suggesting that the system was overloaded for a moment.
+
+
+- CPU Usage Spike:
+  ![alt](cpu_usage.png)
 
 ## Group Contributions
-| Member   | Contribution                                                                                 |
-|----------|----------------------------------------------------------------------------------------------|
-| Geoffrey | Implemented and executed Windows stress test script, collected metrics, summarized findings. |
-| Lucille  | Implemented Load testing using Java,collected and stored metrics                             |
-
+| Member   | Contribution                                                                                                                         |
+|----------|--------------------------------------------------------------------------------------------------------------------------------------|
+| Geoffrey | Implemented and executed Windows stress test script, collected metrics, summarized findings.                                         |
+| Lucille  | Implemented Load testing using Java,collected and stored metrics                                                                     |
+| Vanessa | Implemented Spike Testing using JMeter. Created TestPlan `SpikeTest.jmx` under jmeter folder in jablib/src/test. Summarized results. | 

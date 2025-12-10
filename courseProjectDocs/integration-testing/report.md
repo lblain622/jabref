@@ -53,8 +53,8 @@ The goal of this test is to verify that the database is correctly updated when a
  1. When two entries have the same name,author, but a different year, the duplicate check module detects them as duplicates.
 
 ## Group contributions
-| Member   | Task/Contribution                                     | Notes                                                         |
-|----------|-------------------------------------------------------|---------------------------------------------------------------|
-| Geoffrey | Designed and implemented `PdfImporterIntegrationTest` | Verified data flow between importer and parser result modules |
-| Lucille  | Designed and implemented  `DuplicateCheckIntegrationTest`                             | N/A                                                           |
-| Vanessa  | X                                                     | X                                                             |
+| Member   | Task/Contribution                                         | Notes                                                                        |
+|----------|-----------------------------------------------------------|------------------------------------------------------------------------------|
+| Geoffrey | Designed and implemented `PdfImporterIntegrationTest`     | Verified data flow between importer and parser result modules                |
+| Lucille  | Designed and implemented  `DuplicateCheckIntegrationTest` | N/A                                                                          |
+| Vanessa  | Designed and implemented `FormAuthStudyIntegrationTest`	    | Applied formatter operations on author and interactions between StudyCatalog |
