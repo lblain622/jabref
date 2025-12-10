@@ -133,7 +133,7 @@ See attached photo below for detailed results.
 
 
 - CPU Usage Spike:
-  ![alt](cpu_usage.png)
+  ![alt](cpu_usage.PNG)
 
 ## Group Contributions
 | Member   | Contribution                                                                                                                         |
